@@ -12,10 +12,10 @@ int bsearch(int array[], int left, int right, int value) {
         return middle;
     }
     else if (array[middle] > value) {
-        bsearch(array, left, right - 1, value);
+        bsearch(array, left, middle - 1, value);
     }
     else {
-        bsearch(array, left + 1, right, value);
+        bsearch(array, middle + 1, right, value);
     }
 }
 
