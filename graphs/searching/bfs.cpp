@@ -37,7 +37,9 @@ int main() {
         }
         for (auto it = E[node].begin(); it != E[node].end(); ++it) {
             if (!visited[*it]) {
-                dist[*it] = dist[node] + 1;
+                if ((dist[*it] > dist[node] + 1) || dist[*it] == 0) {
+                    dist[*it] = dist[node] + 1;
+                }
                 Q.push(*it);
             }
         }
