@@ -16,7 +16,7 @@ int state[MAX_N];
 int main() {
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
-	pq.push(pair<int, int>(1, 6));
+    pq.push(pair<int, int>(1, 6));
     pq.push(pair<int, int>(2, 5));
     pq.push(pair<int, int>(3, 4));
 
@@ -42,10 +42,10 @@ int main() {
     }
 
     dist[s] = 0;
-	pq.push(pair<int, int>(0, s));
+    pq.push(pair<int, int>(0, s));
     while(!pq.empty()) {
         pair<int, int> current = pq.top();
-		pq.pop();
+        pq.pop();
         cout << "Current: " << current.second << endl;
         cout << "Checking kids..." << endl;
         for (auto it = E[current.second].begin(); it != E[current.second].end(); ++it) {
