@@ -64,7 +64,7 @@ int main() {
         if (current.second == t) {
             cout << "-------- Target found ---------" << endl;
             cout << "It's shortest path is: " << dist[current.second] << endl;
-            //break;
+            break;
         }
         state[current.second] = 1;
         cout << "Done with current: " << current.second << endl;
