@@ -42,28 +42,20 @@ int main() {
     while(!pq.empty()) {
         pair<int, int> current = pq.top();
         pq.pop();
-        cout << "Current: " << current.second << endl;
-        cout << "Checking kids..." << endl;
         for (auto it : E[current.second]) {
             pair<int, int> node = it;
-            cout << "Node: " << node.second << ", state: " << state[node.second] << endl;
             if (!state[node.second]) {
                 if (dist[node.second] > dist[current.second] + node.first) {
-                    cout << "dist[node]: " << dist[node.second] << ", dist[current]: " << dist[current.second] << ", weight: " << node.first << endl;
                     dist[node.second] = dist[current.second] + node.first;
-                    cout << "dist[" << node.second << "]  = dist[" << current.second << "] + " << node.first << " = " << dist[node.second] << endl;
                     pq.push(node);
                 }
             }
         }
         if (current.second == t) {
-            cout << "-------- Target found ---------" << endl;
-            cout << "It's shortest path is: " << dist[current.second] << endl;
+            cout << "The shortest path is: " << dist[current.second] << endl;
             break;
         }
         state[current.second] = true;
-        cout << "Done with current: " << current.second << endl;
-        cout << "Set current's state to permanent (1)" << endl;
     }
     return 0;
 }
